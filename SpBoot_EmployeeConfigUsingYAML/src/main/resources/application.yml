@@ -1,0 +1,21 @@
+
+
+my:
+  app:
+      eId: 101
+      eName: "sisu" 
+      eAddrs:  "kol"
+      empFavColor:
+      - RED
+      - GREEN
+      - YELLOW 
+      empFavFood:
+      - DOSA
+      - BIRIYANI
+      - IDLI
+      empFavCars:
+      - AUDI
+      - BMW
+      - PORSCHE
+      
+ 
