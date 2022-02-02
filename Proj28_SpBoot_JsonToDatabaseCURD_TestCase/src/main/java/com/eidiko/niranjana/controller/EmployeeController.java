@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.eidiko.niranjana.entity.Employee;
 import com.eidiko.niranjana.service.EmployeeMgmtService;
 
@@ -16,15 +15,16 @@ public class EmployeeController {
 	private EmployeeMgmtService service; 
 	
 		@GetMapping("/empTestCount")
-		public void  EmployeeControllerForCount()
+		public void  EmployeeControllerForCount(@RequestBody Employee emp)
 		{
 				try {
-					System.out.println("Employee Count:"+service.fetchEmpsCount());
+					System.out.println("Employee count:"+service.fetchEmpsCount());
 				}		
 				catch(DataAccessException dae)
 				{
 					dae.printStackTrace();
 				}
+				System.out.println("Total Employee Counted Succsessfully");
 		}
 		
 	@PostMapping("/empTestInsert")
@@ -77,18 +77,6 @@ public class EmployeeController {
 				dae.printStackTrace();
 			}
 			return "data selected";	
-	}
-	@PostMapping("/empTestSelect1")
-	public String  EmployeeControllerSelectByName(@RequestBody Employee emp)
-	{
-			try {
-				System.out.println(service.fetchEmpDetailsByName(emp.geteName()));
-			}		
-			catch(DataAccessException dae)
-			{
-				dae.printStackTrace();
-			}
-			return "data selected1";	
 	}
 }
 
