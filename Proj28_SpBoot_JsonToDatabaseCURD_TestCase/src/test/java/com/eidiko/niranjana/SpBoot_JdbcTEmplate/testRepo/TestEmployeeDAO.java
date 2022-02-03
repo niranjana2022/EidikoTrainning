@@ -1,6 +1,8 @@
 package com.eidiko.niranjana.SpBoot_JdbcTEmplate.testRepo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Map;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +16,7 @@ public class TestEmployeeDAO {
 	@Test
 	public void testGetEmpCount()
 	{
-		int expected=13;
+		int expected=21;
 		int actual = empdao.getEmpsCount();
 		System.out.println(actual);
 		assertEquals(expected, actual);
