@@ -28,7 +28,7 @@ public class TestEmployeeService_TestMethodOrder
 	}
 	@Test
 	@Order(1)
-	public void testEmployeeInterest() 
+	public void testEmployeeInterestB() 
 	{
 		 actual = service.calcEmployeeInterest(100000, 2, 5); //actual result
 		 expected = 10000.0f; //manually expected
@@ -36,8 +36,8 @@ public class TestEmployeeService_TestMethodOrder
 		System.out.println("Our testEmployeeInterest  is successfully Executed");		
 	}
 	@Test
-	@Order(2)
-	public void testEmployeeInterest1() 
+	@Order(1)
+	public void testEmployeeInterestA() 
 	{
 		 actual = service.calcEmployeeInterest(100000, 2, 5); //actual result
 		 expected = 10000.0f; //manually expected

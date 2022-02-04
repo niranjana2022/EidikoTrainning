@@ -1,10 +1,12 @@
 package com.eidiko.niranjana;
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 import java.sql.Connection;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 
 import com.eidiko.niranjana.service.JdbcConClassService;
 
@@ -20,12 +22,12 @@ public class TestJdbcConClassservice_failMethod {
 	@Test
 	public void testJdbcConTest()
 	{
-		Connection expected=JdbcConClassService.getCon();
 		Connection actual=JdbcConClassService.getCon();
-		/*
-		 * if(expected==null || actual==null) { fail("Check may be one value is null");
-		 * }
-		 */
-		assertNotNull(actual);
+		Connection expected=JdbcConClassService.getCon();
+		 if(actual==null || expected==null)
+		 {
+			 fail("Check may be one value is null");
+		  } 
+		//assertNotNull(actual);
 	}
 }
