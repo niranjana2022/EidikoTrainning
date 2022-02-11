@@ -11,6 +11,7 @@ public interface IEmployeeMgmtService {
 	List<Employee> getAllEmployees();
 	Employee getOneEmployee(Integer id);
 	void deleteEmployee(Integer id);
-	//void updateEmployee(Employee e);
+	void updateEmployee(Employee e);
 	Page<Employee> getAllEmployees(Pageable pageable);
+	//Integer  fetchEmployeeByEno(int eno);
 }

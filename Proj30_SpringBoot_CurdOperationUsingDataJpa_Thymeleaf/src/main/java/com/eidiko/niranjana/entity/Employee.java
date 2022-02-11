@@ -30,4 +30,16 @@ public class Employee {
 	
 	@Column(name="EDEPT")
 	private String empDept;
+
+
+	public Employee() {
+	
+	}
+
+
+	public Employee(Integer empId) {
+		super();
+		this.empId = empId;
+	}
+	
 }

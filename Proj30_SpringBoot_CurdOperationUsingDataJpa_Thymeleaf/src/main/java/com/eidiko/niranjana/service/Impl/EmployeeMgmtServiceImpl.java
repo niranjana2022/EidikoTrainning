@@ -45,4 +45,12 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService{
 	public Page<Employee> getAllEmployees(Pageable pageable) {
 		return repo.findAll(pageable);
 	}
+
+	@Override
+	public void updateEmployee(Employee e) {
+		repo.save(e);
+		
+	}
+
+	
 }

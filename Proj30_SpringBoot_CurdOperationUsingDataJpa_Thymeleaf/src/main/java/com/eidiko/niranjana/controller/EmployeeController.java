@@ -1,4 +1,5 @@
 package com.eidiko.niranjana.controller;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.eidiko.niranjana.entity.Employee;
 import com.eidiko.niranjana.service.IEmployeeMgmtService;
@@ -33,21 +35,28 @@ public class EmployeeController {
 		{
 			Integer id = service.saveEmployee(employee); //store in db
 			String message = "Employee '"+id+"' Created!"; //create message
-			model.addAttribute("message", message); //send message to ui
+			model.addAttribute("messageView", message); //send message to ui
 			return "EmployeeRegister";
 		}
-
-	/*
-	 @GetMapping("/edit")
-	public  String  showEmployeeEditForm(@RequestParam("no") int eno,
-			                                                             @ModelAttribute("empFrm") Employee emp) {
-		//use service
-		Employee emp1=service.fetchEmployeeByEno(eno);
-		//copy recived data (emp1) to  emp
-		BeanUtils.copyProperties(emp1,emp);
-	    //return LVN
-		return "edit_employee";
-	}
+//================================Update operation=============================
+		@GetMapping("/edit")
+		public String showEdit(@ModelAttribute Integer id,Model model) 
+		{
+			Employee e = service.getOneEmployee(id);
+			model.addAttribute("employee", e);
+			return "EmployeeEdit";
+		}
+		@PostMapping("/update")
+		public String updateData(@ModelAttribute Employee employee,Model model) 
+		{
+		 service.updateEmployee(employee);
+			String message = "Employee '"+employee.getEmpId()+"' Created!"; //create message
+			model.addAttribute("messageView",message );
+			return "EmployeeEdit";
+		}
+//==================================================================================	
+	
+		
 	
 	/*	@PostMapping("/edit")
 		public   String  editEmployee(Map<String,Object> map,@ModelAttribute("empFrm") Employee emp) {
