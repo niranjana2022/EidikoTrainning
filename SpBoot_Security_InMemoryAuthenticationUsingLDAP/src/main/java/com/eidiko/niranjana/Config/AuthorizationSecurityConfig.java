@@ -28,8 +28,6 @@ protected void configure(HttpSecurity http) throws Exception {
 	//default LoginForm
 	.and()
 	.formLogin()
-	
-	
 	//Default LogoutFform
 	.and()
 	.logout()

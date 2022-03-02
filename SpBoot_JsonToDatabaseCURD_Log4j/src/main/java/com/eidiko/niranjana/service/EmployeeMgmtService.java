@@ -1,9 +1,7 @@
 package com.eidiko.niranjana.service;
 import java.util.List;
 import java.util.Map;
-
 public interface EmployeeMgmtService {
-
 		public int fetchEmpsCount();
 		public int registerEmp(Integer eId,String eName, String eAddrs);
 		public int updateEmpService(Integer eId,String eName, String eAddrs);

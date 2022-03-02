@@ -1,7 +1,6 @@
 package com.eidiko.niranjana.dao;
 import java.util.List;
 import java.util.Map;
-
 public interface EmployeeDAO {
        //Count Total no. of Employee 
 		public int getEmpsCount();
@@ -20,5 +19,4 @@ public interface EmployeeDAO {
 		
 		//Get the employee details by using his ENAME
 		public  List<Map<String,Object>> getEmpDetailsByUsingName(String eName);
-		
 }

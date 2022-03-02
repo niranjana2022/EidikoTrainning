@@ -1,7 +1,6 @@
 package com.eidiko.niranjana.dao;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO 
-{
-	
+{	
 	private static Logger logger = Logger.getLogger(EmployeeDAOImpl.class);
 	static 
 	{
@@ -59,7 +57,6 @@ public class EmployeeDAOImpl implements EmployeeDAO
 		return count;
 	}
 //====================Insert Employees =====================
-
 	@Override
 	public int insertEmpDAO(Integer eId,String eName, String eAddrs) 
 	{

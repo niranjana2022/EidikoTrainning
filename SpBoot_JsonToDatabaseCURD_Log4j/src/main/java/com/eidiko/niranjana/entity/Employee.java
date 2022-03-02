@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="emptabdata")
 public class Employee {
-
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private Integer eId;
@@ -44,6 +43,4 @@ public class Employee {
 		public String toString() {
 			return "Employee [eId=" + eId + ", eName=" + eName + ", eAddrs=" + eAddrs + "]";
 		}
-		
-		
 }

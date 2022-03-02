@@ -19,6 +19,5 @@ public interface EmployeeDAO {
 		public   Map<String,Object> getEmpDetailsDAO(int no);
 		
 		//Get the employee details by using his ENAME
-		public  List<Map<String,Object>> getEmpDetailsByUsingName(String eName);
-		
+		public  List<Map<String,Object>> getEmpDetailsByUsingName(String eName);	
 }

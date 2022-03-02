@@ -80,7 +80,5 @@ public class EmployeeMgmtServiceImpl implements EmployeeMgmtService{
 		//using  dao class method
 		System.out.println("selected  Emp name is:"+eName);
 		return dao.getEmpDetailsByUsingName(eName);
-	}
-	
-	
+	}	
 }

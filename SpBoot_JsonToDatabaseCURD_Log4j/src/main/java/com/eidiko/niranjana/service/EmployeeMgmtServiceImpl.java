@@ -112,8 +112,7 @@ public class EmployeeMgmtServiceImpl implements EmployeeMgmtService{
 		
 	}
 	
-//=======================Delete Employees =========================
-	
+//=======================Delete Employees =========================	
 	@Override
 	public int deleteEmpService(Integer eId) 
 	{
@@ -134,7 +133,6 @@ public class EmployeeMgmtServiceImpl implements EmployeeMgmtService{
 		logger.debug("com.eidiko.niranjana.service.Impl::EmployeeMgmtServiceImpl class deleteEmpService() method is end");
 		return count;
 	}
-	
 	//=======================Select Operation =========================
 	@Override
 	public Map<String, Object> fetchEmpDetailsByService(int no) 

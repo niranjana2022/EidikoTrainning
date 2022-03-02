@@ -28,7 +28,6 @@ import com.eidiko.niranjana.entity.Product;
 @Configuration
 @EnableBatchProcessing
 public class BatchConfig {
-
 	//1. reader
 	@Bean
 	public ItemReader<Product> reader() {
@@ -41,8 +40,7 @@ public class BatchConfig {
 			setLineTokenizer(new DelimitedLineTokenizer() {{
 				setDelimiter(DELIMITER_COMMA);
 				setNames("prodId","prodCode","prodCost");
-			}});
-			
+			}});	
 			//4. convert to object
 			setFieldSetMapper(new BeanWrapperFieldSetMapper<>() {{
 				setTargetType(Product.class);
@@ -61,12 +59,10 @@ public class BatchConfig {
 			double cost = item.getProdCost();
 			
 			item.setProdGst(cost*12/100.0);
-			item.setProdDisc(cost*20/100.0);
-			
+			item.setProdDisc(cost*20/100.0);		
 			return item;
 		};
-	}
-	
+	}	
 	@Autowired
 	private DataSource dataSource;
 	//3. writer
@@ -77,14 +73,12 @@ public class BatchConfig {
 		writer.setDataSource(dataSource);
 		writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
 		return writer;
-	}
-	
+	}	
 	//4. listener
 	/*@Bean
 	public JobExecutionListener listener() {
 		return new MyJobListener();
 	}*/
-	
 	@Bean
 	public JobExecutionListener listener() {
 		return new JobExecutionListener() {
@@ -93,19 +87,15 @@ public class BatchConfig {
 				System.out.println("Job starts on => " + je.getStatus());
 				System.out.println("job starts date is => " + new Date());
 			}
-
 			public void afterJob(JobExecution je) {
 				System.out.println("Job ends on => " + je.getStatus());
 				System.out.println("Jobs ends date => " + new Date());
 			}
-		};
-		
+		};		
 	}
-	
 	//5. StepBuilderFactory
 	@Autowired
 	private StepBuilderFactory sf;
-	
 	//6. Step
 	@Bean
 	public Step stepA() {
@@ -116,11 +106,9 @@ public class BatchConfig {
 				.writer(writer())
 				.build();
 	}
-	
 	//7. JobBuilderFactory
 	@Autowired
-	private JobBuilderFactory jf;
-	
+	private JobBuilderFactory jf;	
 	//8. Job
 	@Bean
 	public Job jobA() {
@@ -128,7 +116,6 @@ public class BatchConfig {
 				.incrementer(new RunIdIncrementer())
 				.listener(listener())
 				.start(stepA())
-				.build()
-				;
+				.build();
 	}
 }

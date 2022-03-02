@@ -26,7 +26,7 @@ public class SpBootJdbcTEmplateApplication {
 			dae.printStackTrace();
 		}
 //=======================INSERT OPERATION=========================
-	/*
+	
 		try {
 			System.out.println("insert Emp:"+service.registerEmp(201,"Afnan","Dubai"));
 		}
@@ -35,9 +35,9 @@ public class SpBootJdbcTEmplateApplication {
 		{
 			dae.printStackTrace();
 		}
-	*/
+	
 //=======================UPDATE OPERATION=========================
-		/*
+		
 				try {
 					System.out.println(service.updateEmpService(201,"Afnan9","Dubai9"));
 				}
@@ -46,9 +46,9 @@ public class SpBootJdbcTEmplateApplication {
 				{
 					dae.printStackTrace();
 				}
-			*/
+			
 //=======================DELETE OPERATION=========================
-		/*		
+			
 				try {
 					System.out.println(service.deleteEmpService(201));
 				}
@@ -57,7 +57,7 @@ public class SpBootJdbcTEmplateApplication {
 				{
 					dae.printStackTrace();
 				}
-				*/
+				
 //====================SELECT OPERATION======================
 				try {
 					System.out.println(service.fetchEmpDetailsByService(102));
@@ -77,5 +77,4 @@ public class SpBootJdbcTEmplateApplication {
 		//close container
 		((ConfigurableApplicationContext)ctx).close();
 	}
-
 }
