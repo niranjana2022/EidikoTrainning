@@ -23,6 +23,9 @@ public interface ReserveFundDetailsService {
 	//findById(ID id)
 	public ReserveFundDetails retrieveReserveFundDataById(Integer id);
 	
+	//save
+	public ReserveFundDetails saveReserveFundData();
+	
 	
 
 }

@@ -67,5 +67,9 @@ public class ReserveFundDetailsRunner implements CommandLineRunner {
 		//System.out.println(service.retrieveReserveFundDataById(73));//record not found
 		System.out.println(service.retrieveReserveFundDataById(73));
 		
+//=================================================================================
+		System.out.println("------save() method--------");
+		System.out.println(service.saveReserveFundData());
 	}
+
 }

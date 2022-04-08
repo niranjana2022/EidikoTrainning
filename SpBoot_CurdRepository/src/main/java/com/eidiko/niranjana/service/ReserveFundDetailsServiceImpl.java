@@ -59,5 +59,19 @@ public class ReserveFundDetailsServiceImpl implements ReserveFundDetailsService 
 	public ReserveFundDetails retrieveReserveFundDataById(Integer id) {
 		return repo.findById(id).orElse(new ReserveFundDetails());//if record not there then we get empty ReservefundDetails object
 	}
+	
+//=======================save() method===================
+	@Override
+	public ReserveFundDetails saveReserveFundData() {
+		ReserveFundDetails detail = new ReserveFundDetails();
+		detail.setACCOUNT_NUMBER("111");
+		detail.setCIF_NUMBER("222");
+		detail.setMGMNT_COMP_ID(12);
+		detail.setBUILDING_ID(33);
+		detail.setRESERVE_ACCOUNT_NUMBER("44");
+		detail.setIS_ACTIVE("Y");
+		detail.setBRANCH_CODE("073");
+		return repo.save(detail);
+	}
 
 }
