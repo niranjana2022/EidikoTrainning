@@ -1,10 +1,10 @@
-package com.eidiko.niranjana;
+package in.nareshit.niranjana;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpBootPathVariableApplicationTests {
+class SpringBootPathVariableApplicationTests {
 
 	@Test
 	void contextLoads() {

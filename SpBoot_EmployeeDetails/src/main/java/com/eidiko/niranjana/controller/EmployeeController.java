@@ -1,5 +1,4 @@
 package com.eidiko.niranjana.controller;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,6 +72,4 @@ public class EmployeeController {
 		response.put("deleted", Boolean.TRUE);
 		return ResponseEntity.ok(response);
 	}
-	
-	
 }
