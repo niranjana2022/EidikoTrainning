@@ -43,6 +43,7 @@ public class EmployeeController {
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
 		Employee employee = employeeRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
+		System.out.println("");
 		return ResponseEntity.ok(employee);
 	}
 	
@@ -70,6 +71,8 @@ public class EmployeeController {
 		employeeRepository.delete(employee);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
+	//	response.put("dta deleed", Boolean.FALSE);
+		
 		return ResponseEntity.ok(response);
 	}
 }
